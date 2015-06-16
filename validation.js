@@ -93,7 +93,7 @@ define([
 
     $.fn.getErrorParent = function() {
       return $(this).parents(
-        $(this).attr('validation-container') || '.checkbox,.radio,.form-group,.input-group'
+        $(this).attr('validation-container') || '.checkbox,.radio,.form-group,.input-group,td'
       ).first()
     };
 
