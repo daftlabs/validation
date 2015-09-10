@@ -29,7 +29,7 @@ define([
       ;
 
     if (validationString && (!whitelist || whitelist != value)) {
-      var ruleNames = validationString.split(','); 
+      var ruleNames = validationString.split(',');
 
       $.each(ruleNames, function(i, ruleDefinition) {
         var moduleParts = ruleDefinition.split('#')
@@ -58,7 +58,7 @@ define([
           }
         });
 
-        results.push(deferred.promise()); 
+        results.push(deferred.promise());
 
       });
     }
@@ -107,7 +107,7 @@ define([
 
       container
         .find('input,select,textarea')
-        .css({'box-shadow': '0 0 8px rgb(255, 0, 0)'});      
+        .css({'box-shadow': '0 0 8px rgb(255, 0, 0)'});
 
       container.find('[validation-error]').remove();
 
