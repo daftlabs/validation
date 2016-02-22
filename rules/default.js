@@ -2,22 +2,23 @@ define([
   'jquery'
 ], function($) {
 
+  function required_radio(radio) {
+    var anySelected = false;
+    $("input[name='" + radio.attr("name") + "']").each(function (i, input) {
+      if ($(input).prop("checked")) {
+        anySelected = true;
+        return false;
+      }
+    });
+    return anySelected;
+  }
+
   return {
     required: function (value, input, ruleArgs) {
       if ($(input).attr("type") === "radio") {
-        return Boolean(this._required_radio(input));
+        return Boolean(required_radio(input));
       }
       return Boolean(value);
-    },
-    _required_radio: function (radio) {
-      var anySelected = false;
-      $("input[name='" + radio.attr("name") + "']").each(function (i, input) {
-        if ($(input).prop("checked")) {
-          anySelected = true;
-          return false;
-        }
-      });
-      return anySelected;
     },
     email: function(value) {
       var result = new $.Deferred();
